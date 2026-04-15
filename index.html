@@ -1,45 +1,372 @@
-<body style="font-family: sans-serif; max-width: 900px; margin: 40px auto; line-height: 1.6; color: #5c4033; background: #fdfaf5;">
-  
-   
-    
-    <h1 style="text-align:center; color:#8b5e3c; margin-bottom:10px;">Cozy Kitchen Moments</h1>
-    
-    <!-- Buttons direkt unter dem Bild – angepasst -->
-    <div style="text-align:center; margin:30px 0 50px;">
-        <a href="https://de.pinterest.com/cozykitchenmoments/"
-           class="btn"
-           style="display:inline-block; padding:16px 40px; background:#8b5e3c; color:white; text-decoration:none; border-radius:12px; font-size:1.3em; margin:15px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-           More Cozy Kitchen Pins on Pinterest
-        </a>
-        
-    </div>
-    
-    <!-- Kurzer Intro-Text – jetzt kitchen-fokussiert -->
-    <p style="text-align:center; font-size:1.2em; margin-bottom:40px;">
-        Welcome to Cozy Kitchen Moments — your place for warm light, rustic textures, and the small everyday joys found in the kitchen.
-    
-     
-    </p>
-    
-    <!-- Hover-Effekt für Buttons (bleibt gleich) -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Cozy Kitchen Moments – free image sets</title>
     <style>
-        .btn:hover { opacity:0.9; transform:translateY(-2px); transition:all 0.2s; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #fdfaf5;
+            color: #5c4033;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid #e6d9ce;
+            flex-shrink: 0;
+        }
+
+        .title-area {
+            text-align: left;
+        }
+
+        .title-area h1 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #8b5e3c;
+            line-height: 1.2;
+        }
+
+        .title-area p {
+            font-size: 0.65rem;
+            color: #a0825a;
+        }
+
+        .trust {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .trust span {
+            font-size: 0.6rem;
+            background: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            border: 0.5px solid #e0cfbc;
+            color: #8b5e3c;
+        }
+
+        .three-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background: #ffffff;
+            border: 1px solid #e6d9ce;
+            border-radius: 20px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+            border-color: #c4a882;
+        }
+
+        .btn-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-previews {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .preview-thumb {
+            width: 65px;
+            height: 65px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f5efe8;
+        }
+
+        .preview-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn-right {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .btn-right h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: #5c4033;
+            line-height: 1.3;
+        }
+
+        .btn-hint {
+            font-size: 0.6rem;
+            color: #8b5e3c;
+            font-weight: 500;
+        }
+
+        .btn-desc {
+            text-align: left;
+            font-size: 0.65rem;
+            color: #a0825a;
+            border-top: 0.5px solid #f0e8e0;
+            padding-top: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .legal-note {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #a0825a;
+            background: #fff;
+            padding: 0.6rem;
+            border-radius: 40px;
+            margin: 0.5rem 0 1rem;
+            border: 0.5px solid #f0e8e0;
+        }
+
+        .pinterest {
+            text-align: center;
+            margin: 0.3rem 0 0.8rem;
+        }
+
+        .pinterest a {
+            display: inline-block;
+            padding: 0.7rem 1.3rem;
+            background: #8b5e3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 0.8rem;
+        }
+
+        .pinterest a:hover {
+            opacity: 0.9;
+        }
+
+        /* IMPRESSUM – GANZ UNTEN, BLASS, BEI HOVER LESBAR */
+        .footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            font-size: 0.6rem;
+            color: #d4c4b0;
+            border-top: 0.5px solid #f0e8e0;
+            transition: color 0.2s ease;
+        }
+
+        .footer:hover {
+            color: #a0825a;
+        }
+
+        .footer a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer a:hover {
+            color: #8b5e3c;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 1rem;
+            }
+            .preview-thumb {
+                width: 52px;
+                height: 52px;
+            }
+            .btn-right h3 {
+                font-size: 0.8rem;
+            }
+            .btn-desc {
+                font-size: 0.6rem;
+            }
+            .profile-img {
+                width: 45px;
+                height: 45px;
+            }
+            .title-area h1 {
+                font-size: 1.2rem;
+            }
+        }
     </style>
-<!-- Neuer Abschnitt: Deine fertige Cozy Kitchen Moments Seite -->
-<section style="margin-top:120px; text-align:center;">
-    <img src="cozykitchenmoments_ligt.png"
-         alt="A moment for you"
-         style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.15);">
-</section>
-<p style="text-align:center; font-size:0.6em; margin-top:120px;">
-    <a href="impressum.html" style="color:#5c4033; opacity:0.25; text-decoration:none;">
-        Impressum
-    </a>
-</p>
+</head>
+<body>
 
+<div class="container">
+    <div class="header">
+        <img src="https://raw.githubusercontent.com/MRGPLB/cozykitchenmoments/main/ComfyUI_00001_.png" alt="Cozy Kitchen Moments" class="profile-img">
+        <div class="title-area">
+            <h1>cozy kitchen moments</h1>
+            <p>free image sets – for you</p>
+        </div>
+    </div>
 
+    <div class="trust">
+        <span>✦ high resolution</span>
+        <span>✦ no watermark</span>
+        <span>✦ no email</span>
+        <span>✦ instant</span>
+    </div>
 
+    <div class="three-buttons">
+        <div class="btn" data-set="deco">
+            <div class="btn-top">
+                <div class="btn-previews">
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_still_live_1.png" alt="preview"></div>
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_still_live_2.png" alt="preview"></div>
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_still_live_3.png" alt="preview"></div>
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_still_live_4.png" alt="preview"></div>
+                </div>
+                <div class="btn-right">
+                    <h3>still life & decor</h3>
+                    <div class="btn-hint">↓ click — download all 4</div>
+                </div>
+            </div>
+            <div class="btn-desc">vases · ceramics · travertine</div>
+        </div>
+
+        <div class="btn" data-set="tools">
+            <div class="btn-top">
+                <div class="btn-previews">
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_kitchen_tools_1.png" alt="preview"></div>
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_kitchen_tools_2.png" alt="preview"></div>
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_kitchen_tools_3.png" alt="preview"></div>
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_kitchen_tools_4.png" alt="preview"></div>
+                </div>
+                <div class="btn-right">
+                    <h3>kitchen tools &<br>craftsmanship</h3>
+                    <div class="btn-hint">↓ click — download all 4</div>
+                </div>
+            </div>
+            <div class="btn-desc">copper · wood · hand-forged steel</div>
+        </div>
+
+        <div class="btn" data-set="spring">
+            <div class="btn-top">
+                <div class="btn-previews">
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_spring2026_1.png" alt="preview"></div>
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_spring2026_2.png" alt="preview"></div>
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_spring2026_3.png" alt="preview"></div>
+                    <div class="preview-thumb"><img src="https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_spring2026_4.png" alt="preview"></div>
+                </div>
+                <div class="btn-right">
+                    <h3>spring 2026 edition</h3>
+                    <div class="btn-hint">↓ click — download all 4</div>
+                </div>
+            </div>
+            <div class="btn-desc">wild garlic · fresh light · seasonal</div>
+        </div>
+    </div>
+
+    <div class="legal-note">
+        📸 private use only – no commercial license included
+    </div>
+
+    <div class="pinterest">
+        <a href="https://de.pinterest.com/cozykitchenmoments/">✦ more on pinterest ✦</a>
+    </div>
+
+    <!-- IMPRESSUM: GANZ UNTEN, BLASS, BEI HOVER LESBAR -->
+    <div class="footer">
+        <a href="impressum.html">Impressum</a> | © cozy kitchen moments
+    </div>
+</div>
+
+<script>
+    const sets = {
+        deco: {
+            name: "still life & decor",
+            images: [
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_still_live_1.png",
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_still_live_2.png",
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_still_live_3.png",
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_still_live_4.png"
+            ]
+        },
+        tools: {
+            name: "kitchen tools & craftsmanship",
+            images: [
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_kitchen_tools_1.png",
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_kitchen_tools_2.png",
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_kitchen_tools_3.png",
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_kitchen_tools_4.png"
+            ]
+        },
+        spring: {
+            name: "spring 2026 edition",
+            images: [
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_spring2026_1.png",
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_spring2026_2.png",
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_spring2026_3.png",
+                "https://raw.githubusercontent.com/MRGPLB/pinterest-images/main/1_Cozy-kitchen-moments_spring2026_4.png"
+            ]
+        }
+    };
+
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const setId = this.getAttribute('data-set');
+            const set = sets[setId];
+            if (!set) return;
+            
+            set.images.forEach(url => {
+                window.open(url, '_blank');
+            });
+            alert(`✨ ${set.name} – ${set.images.length} images opened.\n\n📸 Private use only. Commercial use not permitted.`);
+        });
+    });
+</script>
 
 </body>
-
+</html>
