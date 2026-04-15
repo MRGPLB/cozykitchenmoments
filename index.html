@@ -191,7 +191,6 @@
             opacity: 0.9;
         }
 
-        /* IMPRESSUM – GANZ UNTEN, BLASS, BEI HOVER LESBAR */
         .footer {
             text-align: center;
             padding-top: 2rem;
@@ -209,12 +208,6 @@
         .footer a {
             color: inherit;
             text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer a:hover {
-            color: #8b5e3c;
-            text-decoration: underline;
         }
 
         @media (max-width: 500px) {
@@ -317,7 +310,6 @@
         <a href="https://de.pinterest.com/cozykitchenmoments/">✦ more on pinterest ✦</a>
     </div>
 
-    <!-- IMPRESSUM: GANZ UNTEN, BLASS, BEI HOVER LESBAR -->
     <div class="footer">
         <a href="impressum.html">Impressum</a> | © cozy kitchen moments
     </div>
@@ -360,10 +352,17 @@
             const set = sets[setId];
             if (!set) return;
             
+            // Automatischer Download für jedes Bild
             set.images.forEach(url => {
-                window.open(url, '_blank');
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = url.split('/').pop(); // Dateiname aus URL
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             });
-            alert(`✨ ${set.name} – ${set.images.length} images opened.\n\n📸 Private use only. Commercial use not permitted.`);
+            
+            alert(`✨ ${set.name} – ${set.images.length} images downloaded.\n\n📸 Private use only. Commercial use not permitted.`);
         });
     });
 </script>
